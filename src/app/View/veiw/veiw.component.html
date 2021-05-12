@@ -1,0 +1,16 @@
+<div class="container">
+  <ngx-spinner></ngx-spinner>
+ 
+  <div *ngIf="photos">
+    <div *ngIf="photos.length > 0">
+      <figure *ngFor="let cat of photos" class="operationDiv">
+        <img  (click)="veiwDetails(cat)" class="rectangle" src="{{cat.thumbnailUrl}}" alt="{{cat.title}}" matTooltip="{{cat.title}}">
+      </figure>
+    </div>
+
+    <div class="errMsg" *ngIf="!photos.length > 0">
+      No Data Found!
+    </div>
+  </div>
+
+</div>
